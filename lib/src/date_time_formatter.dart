@@ -142,6 +142,11 @@ class DateTimeFormatter {
   /// format year text
   static String _formatYear(
       int value, String format, DateTimePickerLocale locale) {
+
+    if(locale == DateTimePickerLocale.th) {
+      value += 543;
+    }
+    
     if (format.contains('yyyy')) {
       // yyyy: the digit count of year is 4, e.g. 2019
       return format.replaceAll('yyyy', value.toString());
